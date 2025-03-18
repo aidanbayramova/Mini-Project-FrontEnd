@@ -1,0 +1,278 @@
+.navbar {
+    background-color: rgb(255, 252, 244); /* Açıq krem rəngi */
+    width: 100%;
+    padding: 10px 4rem;
+    background-size: 100% 100%; /* Fon ölçüsünü 100% etmək */
+    background-position: center; /* Fonun mərkəzləşdirilməsi */
+}
+
+.navbar-brand {
+    margin-right: 5rem;
+}
+
+/* Navbar Links */
+.navbar-nav {
+    gap: 5rem;
+}
+.navbar-nav .nav-link {
+    color: black;
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+    line-height: 2;
+}
+.navbar-nav .nav-link:hover {
+    color: orange;
+}
+
+/* Dropdown Arrow */
+.nav-link .fa-angle-down {
+    font-size: 12px;
+}
+.navbar-nav .nav-link i {
+    margin-top: 3px;
+}
+
+/* Hover Effects for Dropdown Items */
+.navbar-nav .nav-item:hover .dropdown-menu {
+    display: block; /* Allowing the dropdown to appear */
+}
+
+.dropdown-menu {
+    position: absolute; /* Position dropdown relative to navbar item */
+    top: 100%; /* Open dropdown directly below the navbar item */
+    left: 0;
+    right: 0;
+    display: none; /* Hide dropdown by default */
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Ensure dropdown stays above other content */
+    opacity: 0;
+    transition: opacity 0.3s ease-out; /* Add fade effect */
+}
+
+/* Show dropdown on hover */
+.navbar-nav .nav-item:hover .dropdown-menu {
+    display: block; /* Display dropdown on hover */
+    opacity: 1; /* Make it fully visible */
+}
+
+/* Styling for dropdown items */
+.dropdown-item {
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: orange;
+}
+
+/* Optional: Add a smooth transition to the dropdown menu */
+.dropdown-menu {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Icons Section */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 10rem;
+    transition: color 0.3s ease;
+}
+.icons i {
+    font-size: 20px;
+    color: black;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.icons i:hover {
+    color: orange;
+}
+
+/* Badge Section */
+.icons .badge {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    background-color: orange;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* Search Icon Always Black */
+.fa-search:hover {
+    color: black !important;
+}
+
+/* Menu Icon Styling */
+.menu-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(226, 221, 208);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    color: black;
+}
+.menu-icon i {
+    color: black;
+    transition: color 0.3s ease;
+}
+.menu-icon:hover {
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+.menu-icon:hover i {
+    color: orange;
+}
+
+/* Responsive Design */
+
+/* Large screens (lg) */
+@media (min-width: 992px) {
+    .navbar {
+        padding: 10px 4rem;
+    }
+    .navbar-nav {
+        gap: 5rem;
+    }
+    .icons {
+        margin-left: 10rem;
+    }
+}
+
+/* Medium screens (md) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .navbar {
+        padding: 10px 3rem;
+    }
+    .navbar-nav {
+        gap: 2.5rem;
+    }
+    .icons {
+        margin-left: 0;
+        gap: 1.5rem;
+    }
+    .navbar-brand img {
+        height: 60px;
+    }
+}
+
+/* Small screens (sm) */
+@media (max-width: 767px) and (min-width: 576px) {
+    .navbar {
+        padding: 10px 2rem;
+    }
+    .navbar-nav {
+        gap: 1.5rem;
+    }
+    .icons {
+        gap: 1rem;
+    }
+    .navbar-brand img {
+        height: 50px;
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+}
+
+/* Extra Small screens (xs) */
+@media (max-width: 575px) {
+    .navbar {
+        padding: 10px 1rem;
+    }
+    .navbar-brand img {
+        height: 40px;
+    }
+    .navbar-nav .nav-link {
+        font-size: 13px;
+    }
+    .icons {
+        gap: 0.8rem;
+    }
+    .icons i {
+        font-size: 14px;
+    }
+}
+
+.sidebar {
+    color: white; /* Mətin rəngini ağ etmək */
+    background-color: #1b1919; /* Qara fon */
+    position: fixed;
+    top: 0;
+    right: -400px; /* Başlanğıcda görünməməsi üçün */
+    width: 400px;
+    height: 100vh;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+   
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
+.sidebar-content {
+
+    text-align: center;
+    margin-top: 100px;
+}
+.sidebar-logo {
+    width: 130px;
+    margin-bottom: 20px;
+}
+.social-icons i {
+    display: inline-block;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background: gray;
+    color: white;
+    transition: 0.3s;
+}
+.social-icons i:hover {
+    background: white;
+    color: black;
+}
+.sidebar-links  a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+    
+}
+.sidebar-links  a:hover {
+    color: orange;
+}
+
+.sidebar.show {
+    right: 0; /* Açıldıqda ekranın sağında görünəcək */
+}
+
+.menu-icon {
+    cursor: pointer;
+}
