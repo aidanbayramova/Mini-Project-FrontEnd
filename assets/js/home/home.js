@@ -1,24 +1,33 @@
-"use strict"
+"use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
     let menuBtn = document.getElementById("menuBtn");
     let sidebar = document.getElementById("sidebar");
     let closeBtn = document.getElementById("closeBtn");
+    
+    let newMenuBtn = document.getElementById("searchIcon");
+    let newSidebar = document.getElementById("newSidebar");
+    let newCloseBtn = document.getElementById("newCloseBtn");
 
-    // Sidebar açma
+  
     menuBtn.addEventListener("click", function () {
         sidebar.classList.add("show");
+        newSidebar.classList.remove("show"); 
     });
 
-    // Sidebar bağlama
     closeBtn.addEventListener("click", function () {
         sidebar.classList.remove("show");
     });
 
-    // Ekranın başqa yerinə klik edəndə sidebar-ı bağla
-    document.addEventListener("click", function (event) {
-        if (!sidebar.contains(event.target) && !menuBtn.contains(event.target)) {
-            sidebar.classList.remove("show");
-        }
+    newMenuBtn.addEventListener("click", function () {
+        newSidebar.classList.add("show");
+        sidebar.classList.remove("show"); 
+    });
+    
+    newCloseBtn.addEventListener("click", function () {
+        newSidebar.classList.remove("show");
     });
 });
+
+
+
