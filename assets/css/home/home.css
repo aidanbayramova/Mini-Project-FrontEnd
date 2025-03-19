@@ -422,12 +422,14 @@ body {
 
 #hero-section {
     position: relative;
-    padding: 100px 0;
+    padding: 150px 0;
+    margin-bottom: 450px;
+    /* Hero sect/* 1-ci section ilə 2-ci section arasına boşluq əlavə edirik */
 }
 
 #hero-section .background-img {
     width: 100%;
-    height: 104vh;
+    height: 110vh;
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -499,10 +501,10 @@ body {
     }
 
     .text h2 {
-        font-size: 150px;
+        font-size: 140px;
         text-transform: uppercase;
-        font-weight: 20;
-        line-height: 150px;
+        font-weight: 10;
+        line-height: 160px;
     }
 
     .text h3 {
@@ -529,8 +531,178 @@ body {
         background-color: black;
         transition: .2s ease-in-out;
     }
+
     .text button:hover {
         color: black;
         background-color: white;
     }
+
+/* Product Variation Section */
+#product-variation {
+    padding-top: 162px;
+    margin-top: 90px;
 }
+
+.row .col-lg-4 .product-box:last-child {
+    margin-bottom: 0;
+}
+
+#product-variation .product-box {
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.7s ease; /* Şəkil tərpənməsinin yavaş olması */
+}
+
+#product-variation .product-box img {
+    width: 100%;
+    transition: transform 0.9s ease; /* Şəkilin tərpənməsi daha yavaş */
+}
+
+#product-variation .product-text,
+#product-variation .product-text-center {
+    position: absolute;
+    left: 40px;
+    bottom: 0;
+    padding: 20px;
+    transform: translateY(-50%);
+    width: 50%;
+}
+
+#product-variation .product-text {
+    top: 50%;
+}
+
+#product-variation .product-text h2,
+#product-variation .product-text-center h2 {
+    padding: 5px 0;
+    text-transform: uppercase;
+    font-weight: 750;
+}
+
+#product-variation .product-text h4,
+#product-variation .product-text-center h4 {
+    text-transform: uppercase;
+}
+
+#product-variation .product-text a,
+#product-variation .product-text-center a {
+    margin-top: 20px;
+}
+
+#product-variation .highlight-text {
+    color: #FFA500; /* Narıncı rəng */
+}
+
+#product-variation .btn-shop {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.9s ease;
+}
+
+#product-variation .btn-shop:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Şəkil böyüməsi */
+#product-variation .product-box:hover img {
+    transform: scale(1.1); /* Şəkili böyüdür, amma daşımır */
+}
+
+/* Responsivlik */
+@media (max-width: 576px) {
+    #product-variation {
+        padding-top: 100px;
+    }
+    #product-variation .product-text, #product-variation .product-text-center {
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    #product-variation {
+        padding-top: 130px;
+    }
+    #product-variation .product-text, #product-variation .product-text-center {
+        width: 60%;
+    }
+}
+
+@media (min-width: 992px) {
+    #product-variation .product-text, #product-variation .product-text-center {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #product-variation .product-text, #product-variation .product-text-center {
+        width: 45%;
+    }
+}
+#product-variation .product-var-one-text h2,
+#product-variation .product-var-one-text-center h2 {
+    font-weight: bold; /* Qalın etmək üçün font-weight: bold əlavə edilir */
+}
+/* Sözlərin bir-birinə yaxınlaşdırılması */
+#product-variation .product-text h4,
+#product-variation .product-text-center h4 {
+    margin-top: 5px; /* Bir az daha yaxınlaşdırmaq üçün */
+}
+#product-variation .product-box:nth-child(3) .product-text-center {
+    bottom: 5% !important; /* !important əlavə edərək təzyiqi aradan qaldırıram */
+}
+
+
+/* Digər şəkillər üçün yazı və buttonları yuxarı qaldırdım */
+#product-variation .product-box .product-text {
+    top: 40%; /* Yazı və buttonları yuxarı qaldırdım */
+}
+
+#product-variation .product-box .product-text-center {
+    bottom: 10%; /* Bu digər şəkillər üçün keçərlidir */
+}
+}
+
+
+
+
+
+
+
+
+
+
+.tabs_center_button .nav-tabs {
+    border-bottom: none;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tabs_center_button .nav-tabs li a {
+    margin-left: 50px;
+    transition: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: transparent;
+    padding-bottom: 5px;
+  }
+  
+  .tabs_center_button .nav-tabs li:first-child a {
+    margin-left: 0px;
+  }
+  
+  .tabs_center_button .nav-tabs li a:hover {
+    color: var(--main-theme-color);
+  }
+  
+  .tabs_center_button .nav-tabs li .active {
+    color: var(--main-theme-color) !important;
+    border-bottom: 2px solid var(--main-theme-color);
+  }
+  

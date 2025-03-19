@@ -29,5 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
+document.querySelectorAll(".product_variation_one_boxed").forEach((box) => {
+    box.addEventListener("mouseenter", function () {
+      this.style.zIndex = "10"; // Şəkili qabağa gətirir
+      this.style.transform = "scale(1.1)"; // Şəkili böyüdür
+      this.style.transition = "transform 0.3s ease, z-index 0s";
+    });
+  
+    box.addEventListener("mouseleave", function () {
+      this.style.zIndex = "1"; // Normal vəziyyətə qaytarır
+      this.style.transform = "scale(1)";
+    });
+  });
 
