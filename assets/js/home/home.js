@@ -42,3 +42,27 @@ document.querySelectorAll(".product_variation_one_boxed").forEach((box) => {
     });
   });
 
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // İlk açılışda "New Arrival" məhsulları görünsün
+    filterProducts(1);
+});
+
+function filterProducts(category) {
+    // Bütün button-ları götür
+    const buttons = document.querySelectorAll('.category-button');
+
+    // Bütün button-lardan `active` sinfini sil
+    buttons.forEach(button => button.classList.remove('active'));
+
+    // Seçilən button-a `active` sinfini əlavə et
+    buttons[category - 1].classList.add('active');
+
+    // Bütün kartları gizlət
+    const allCards = document.querySelectorAll('.product-card');
+    allCards.forEach(card => card.classList.remove('active'));
+
+    // Seçilən kategoriya üçün kartları göstərin
+    const selectedCards = document.querySelectorAll(`.category-${category}`);
+    selectedCards.forEach(card => card.classList.add('active'));
+}

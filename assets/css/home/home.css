@@ -676,7 +676,7 @@ body {
 
 
 
-
+/* 
 .tabs_center_button .nav-tabs {
     border-bottom: none;
     width: 100%;
@@ -705,4 +705,111 @@ body {
     color: var(--main-theme-color) !important;
     border-bottom: 2px solid var(--main-theme-color);
   }
-  
+   */
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+p {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.category-button:hover {
+    color: orange;
+}
+
+.category-button.active {
+    color: orange;
+    border-bottom: 2px solid orange;
+}
+
+/* Kart düzeni */
+.product-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    padding: 20px;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 271.06px;
+    height: 437.09px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 318.89px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: gray;
+}
+
+/* Heart button style */
+.heart-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.heart-button:hover {
+    background-color: darkorange;
+}
+
+/* Description Overlay */
+.product-card-overlay {
+    position: absolute;
+    bottom: 10px;
+}
