@@ -48,21 +48,57 @@ document.querySelectorAll(".product_variation_one_boxed").forEach((box) => {
     filterProducts(1);
 });
 
-function filterProducts(category) {
-    // Bütün button-ları götür
-    const buttons = document.querySelectorAll('.category-button');
 
-    // Bütün button-lardan `active` sinfini sil
-    buttons.forEach(button => button.classList.remove('active'));
 
-    // Seçilən button-a `active` sinfini əlavə et
-    buttons[category - 1].classList.add('active');
 
-    // Bütün kartları gizlət
-    const allCards = document.querySelectorAll('.product-card');
-    allCards.forEach(card => card.classList.remove('active'));
 
-    // Seçilən kategoriya üçün kartları göstərin
-    const selectedCards = document.querySelectorAll(`.category-${category}`);
-    selectedCards.forEach(card => card.classList.add('active'));
-}
+// function filterProducts(category) {
+//     // Bütün button-ları götür
+//     const buttons = document.querySelectorAll('.category-button');
+
+//     // Bütün button-lardan `active` sinfini sil
+//     buttons.forEach(button => button.classList.remove('active'));
+
+//     // Seçilən button-a `active` sinfini əlavə et
+//     buttons[category - 1].classList.add('active');
+
+//     // Bütün kartları gizlət
+//     const allCards = document.querySelectorAll('.product-card');
+//     allCards.forEach(card => card.classList.remove('active'));
+
+//     // Seçilən kategoriya üçün kartları göstərin
+//     const selectedCards = document.querySelectorAll(`.category-${category}`);
+//     selectedCards.forEach(card => card.classList.add('active'));
+// }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const dots = document.querySelectorAll(".dot");
+    const slider = document.querySelector(".slider");
+    let currentIndex = 0;
+
+    // Kartları dəyişdirir (Sola və sağa keçmək üçün)
+    function changeSlide(index) {
+        const totalSlides = document.querySelectorAll(".slider-item").length;
+        currentIndex = (index + totalSlides) % totalSlides;
+        // Slayderin sola və sağa keçidi
+        slider.style.transition = "transform 0.5s ease"; // Hərəkətin keçidi
+        slider.style.transform = `translateX(-${currentIndex * (100 / 4)}%)`; // 4 kart görünür, ona görə 100% / 4 qədər sola çəkirik
+        updateDots();
+    }
+
+    // Nöqtələri yeniləyir
+    function updateDots() {
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[currentIndex].classList.add("active");
+    }
+
+    // Dots'a klikləmə funksiyası
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            changeSlide(index);
+        });
+    });
+
+    // İlk başlanğıc
+    changeSlide(currentIndex);
+});
