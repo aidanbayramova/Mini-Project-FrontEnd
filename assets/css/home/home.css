@@ -537,6 +537,8 @@ body {
         background-color: white;
     }
 
+
+
     /* Product Variation Section */
     #product-variation {
         padding-top: 162px;
@@ -693,68 +695,11 @@ body {
 
 
 
-
-
-
-/* 
-.tabs_center_button .nav-tabs {
-    border-bottom: none;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .tabs_center_button .nav-tabs li a {
-    margin-left: 50px;
-    transition: inherit;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    background: transparent;
-    padding-bottom: 5px;
-  }
-  
-  .tabs_center_button .nav-tabs li:first-child a {
-    margin-left: 0px;
-  }
-  
-  .tabs_center_button .nav-tabs li a:hover {
-    color: var(--main-theme-color);
-  }
-  
-  .tabs_center_button .nav-tabs li .active {
-    color: var(--main-theme-color) !important;
-    border-bottom: 2px solid var(--main-theme-color);
-  }
-   */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* -------------------------
      Offer Timer One Area 
 ---------------------------*/
 #discount-timer-section {
+    margin-bottom: 50px;
     position: relative;
     /* Konteyneri yerləşdiririk ki, içindəki elementlər düzgün yerləşsin */
     padding: 145px 0;
@@ -992,9 +937,9 @@ body {
 
 
 
-
 /* ToDay's Deal Section */
 #todays-deal-section {
+    margin-bottom: 50px;
     padding: 50px 0;
     text-align: center;
 }
@@ -1024,7 +969,8 @@ body {
 }
 
 .slider-item {
-    flex: 0 0 25%; /* 4 kart görünür */
+    flex: 0 0 25%;
+    /* 4 kart görünür */
     padding: 10px;
     text-align: center;
 }
@@ -1037,22 +983,38 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Şəkil sahəsi */
 .product-image {
     width: 100%;
-    height: 318.89px;
+    height: 380px;
     position: relative;
     overflow: hidden;
 }
 
-/* Şəkil hover olmadan tam görünsün */
 .product-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
     transition: opacity 0.3s ease;
+}
+
+.product-image .hover-image {
+    opacity: 0;
+}
+
+.product-card:hover .default-image {
+    opacity: 0;
+}
+
+.product-card:hover .hover-image {
+    opacity: 1;
 }
 
 /* Yeni etiket */
@@ -1060,13 +1022,28 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #28a745; /* Yaşıl */
+    background-color: #236a3b;
     color: #fff;
-    padding: 5px 10px;
+    padding: 3px 7px;
     font-size: 12px;
     border-radius: 5px;
     font-weight: bold;
     text-transform: uppercase;
+    border-color: #007a58;
+}
+
+.new-label-hot {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: orange;
+    color: #fff;
+    padding: 3px 7px;
+    font-size: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-color: orange;
 }
 
 /* Ürək iconu */
@@ -1112,7 +1089,6 @@ body {
     transition: opacity 0.3s ease;
 }
 
-/* Scanner və ox iconları */
 .icon-scanner,
 .icon-arrows {
     background-color: #fff;
@@ -1165,10 +1141,6 @@ body {
 }
 
 /* Şəkil hover ediləndə dəyişsin və iconlar görünsün */
-.product-card:hover .product-image img {
-    opacity: 0;
-}
-
 .product-card:hover .hidden-icons,
 .product-card:hover .add-to-cart-btn {
     opacity: 1;
@@ -1176,27 +1148,45 @@ body {
 
 /* Məhsulun adı və qiyməti */
 .product-details {
-    padding: 15px;
+    padding: 5px 10px;
     text-align: center;
+    height: 88px;
+    /* Set the height of the product details section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center the content vertically */
 }
 
 .product-name {
     font-size: 16px;
+    /* Reduce font size */
     color: #333;
-    margin: 10px 0;
+    margin: 0;
+    /* Remove margin to save space */
     text-transform: capitalize;
+    overflow: hidden;
+    /* Hide overflow text */
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    text-overflow: ellipsis;
+    /* Show ellipsis if the text overflows */
+    cursor: pointer;
 }
+
+.product-price {
+    font-size: 14px;
+    /* Reduce font size */
+    color: #000;
+    margin-top: 5px;
+    /* Add a small margin to separate name and price */
+}
+
 
 .product-name:hover {
     color: #ff7f00;
 }
 
-.product-price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 15px;
-}
 
 /* Slider Dots */
 .slider-dots {
@@ -1226,289 +1216,660 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .slider-item {
-        flex: 0 0 50%; /* 2 kart görünəcək */
+        flex: 0 0 50%;
     }
 }
 
 @media (max-width: 576px) {
     .slider-item {
-        flex: 0 0 100%; /* 1 kart görünəcək */
+        flex: 0 0 100%;
     }
 }
-
 
 /* -------------------------
      To Days Area 
 ---------------------------*/
-.form-group {
-    margin-bottom: 20px;
-}
 
-label {
-    margin-bottom: 5px;
-}
-
-.product_wrappers_one {
-    overflow: hidden;
-}
-
-.product_wrappers_one .thumb {
-    position: relative;
-    overflow: hidden;
-}
-
-.product_wrappers_one .thumb .image {
-    position: relative;
-    display: block;
-    overflow: hidden;
-}
-
-.product_wrappers_one .thumb .image img {
-    z-index: 1;
-    max-width: 100%;
-    transition: all 0.3s ease 0s;
-    width: 100%;
-}
-
-.product_wrappers_one .thumb .image img.hover-image {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-.product_wrappers_one .thumb .badges {
-    position: absolute;
-    z-index: 8;
-    top: 18px;
-    left: 18px;
-    display: flex;
-    flex-direction: column;
-}
-
-.product_wrappers_one .thumb .badges span {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 24px;
-    display: block;
-    padding: 0 7px;
-    text-align: center;
-    text-transform: capitalize;
-    border-radius: 3px;
-    color: #fff;
-}
-
-.product_wrappers_one .thumb .badges span+span {
-    margin-top: 10px;
-}
-
-.product_wrappers_one .thumb .badges span.new {
-    background-color: #007a58;
-}
-
-.product_wrappers_one .thumb .badges span.hot {
-    background-color: var(--main-theme-color);
-}
-
-.product_wrappers_one .thumb .badges span.sale {
-    background-color: #ff7004;
-}
-
-.product_wrappers_one .thumb .actions {
-    position: absolute;
-    z-index: 9;
-    top: 18px;
-    right: 18px;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease 0s;
-}
-
-.product_wrappers_one .thumb .actions .action {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    transition: all 0.3s ease 0s;
-    text-decoration: none;
-    color: #212121;
-    border-radius: 50%;
-    background-color: #fff;
-}
-
-.product_wrappers_one .thumb .actions .action i {
-    font-size: 14px;
-    line-height: 1;
-}
-
-.product_wrappers_one .thumb .actions .action+.action {
-    margin-top: 10px;
-}
-
-.product_wrappers_one .thumb .actions .action:not(.wishlist) {
-    visibility: hidden;
-    transform: translateY(20px);
-    opacity: 0;
-}
-
-.product_wrappers_one .thumb .actions .action.active {
-    color: #ff7004;
-}
-
-.product_wrappers_one .thumb .actions .action:hover:not(.active) {
-    color: #fff;
-    background-color: #ff7004;
-}
-
-.product_wrappers_one .thumb .add-to-cart {
-    display: block;
-    width: 80%;
-    height: 45px;
-    line-height: 45px;
-    background-color: #fff;
-    text-align: center;
-    border: 0;
-    border-radius: 3px;
-    font-size: 14px;
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    z-index: 11;
-    margin: auto;
-    font-weight: 600;
-    visibility: hidden;
-    transition: all 0.3s ease 0s;
-    transform: translateY(20px);
-    color: #3f3f3f;
-    opacity: 0;
-    font-family: Raleway, sans-serif;
-}
-
-.product_wrappers_one .thumb .add-to-cart:hover {
-    color: #ff7004;
-}
-
-.product_wrappers_one .content {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 15px 23px 15px;
-    transition: all 0.3s ease 0s;
-    text-align: center;
-    background-color: #fff;
-}
-
-.product_wrappers_one .content .title {
-    font-size: 14px;
-    margin: 0px 0 10px;
-}
-
-.product_wrappers_one .content .title a {
-    text-decoration: none;
-    color: #1d1d1d;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    font-size: 16px;
-}
-
-.product_wrappers_one .content .price {
-    font-size: 16px;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #212121;
-}
-
-.product_wrappers_one .content .price:not(:last-child) {
-    margin-bottom: 20px;
-}
-
-.product_wrappers_one .content .price span.new {
-    color: #3f3f3f;
-    font-weight: 500;
-}
-
-.product_wrappers_one .content .price span.old {
-    font-size: 14px;
-    margin-left: 10px;
-    text-decoration: line-through;
-    color: #999;
-}
-
-.product_wrappers_one .content .btn {
-    align-self: center;
-}
-
-.product_wrappers_one:hover .thumb .image img {
-    transform: scale(1.1) rotate(3deg);
-}
-
-.product_wrappers_one:hover .thumb .image img:not(:last-child) {
-    opacity: 0;
-    transition: 0.5s all ease-in-out;
-}
-
-.product_wrappers_one:hover .thumb .image img.hover-image {
-    opacity: 1;
-    transition: 0.5s all ease-in-out;
-}
-
-.product_wrappers_one:hover .thumb .actions .action {
-    visibility: visible;
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.product_wrappers_one:hover .thumb .add-to-cart {
-    visibility: visible;
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.product_wrappers_one:hover .content .title a {
-    color: #474747;
-}
-
-.product_wrappers_one:hover .content .title a:hover {
-    color: #ff7004;
-}
 
 
 /* -------------------------
  Spceial Banner Area 
 ---------------------------*/
-
-#special_offer_one {
-    background-image: url('./assets/img/home/background girls.jpg');
-    /* Şəkil yolunu daxil edin */
-    background-size: cover;
-    /* Şəkli tam ekran üzrə yay */
-    background-position: center;
-    /* Şəkili mərkəzləşdir */
-    background-repeat: no-repeat;
-    /* Şəkilin təkrarlanmasının qarşısını al */
-    padding: 60px 0;
-    /* İçəridə yuxarı və aşağı boşluq */
-
+/* SAGDA 2 SOLADA 1 QIZ OLAN HISSE */
+/* #trending section styles */
+#trending {
+    margin-bottom: 50px;
+    background-image: url("../assets/img/home/background-girls.png");
+    background-size: 1440px 439px; /* Şəkilin ölçüsü */
+    background-position: center center; /* Şəkili mərkəzə yerləşdiririk */
+    height: 439px; /* Şəkilin hündürlüyü */
+    position: relative;
+    display: flex;
+    justify-content: center; /* Yazıları mərkəzə yerləşdiririk */
+    align-items: center; /* Yazıları şaquli mərkəzləşdiririk */
 }
 
-.offer_banner_one h5 {
-    color: var(--main-theme-color);
+/* .offer-text styles */
+#trending .offer-text {
+    position: absolute; /* Yazıları şəkilin üzərinə gətiririk */
+    text-align: center;
+    z-index: 1; /* Yazıların şəkilin üzərində görünməsi üçün */
+    top: 50%; /* Yuxarıdan 50% məsafə */
+    left: 50%; /* Soldan 50% məsafə */
+    transform: translate(-50%, -50%); /* Yazıları tam mərkəzə gətiririk */
 }
 
-.offer_banner_one h2 {
-    color: #fff;
+#trending .offer-text h5 {
+    color: orange;
+}
+
+#trending .offer-text h2 {
+    color: white;
     padding: 10px 0;
+    margin-bottom: 10px;
 }
 
-.offer_banner_one p {
+#trending .offer-text p {
+    color: white;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+/* .btn-shop styles */
+#trending .btn-shop {
+    background-color: white;
+    color: #0c0c0c;
+    padding: 15px 40px;
+    border: none;
+    font-size: 12px; /* Yazını daha da balacalaşdırdıq */
+    font-weight: normal; /* Yaxud yazının qalınlığına nəzarət edə bilərsiniz */
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+#trending .btn-shop:hover {
+    background-color: black;
+    color: white;
+}
+
+/* .offer-img styles */
+#trending .offer-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Tam genişlik */
+    height: 100%; /* Şəkilin hündürlüyü */
+    object-fit: cover;
+    z-index: -1; /* Şəkil yazılardan arxada qalsın */
+}
+
+/* Responsive Design */
+
+/* XS (extra small) devices */
+@media (max-width: 576px) {
+    #trending {
+        padding: 100px 0;
+    }
+
+    #trending .offer-text {
+        padding-left: 20px;
+    }
+
+    #trending .offer-text h2 {
+        font-size: 28px;
+    }
+
+    #trending .offer-text p {
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+
+    #trending .btn-shop {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* SM (small) devices */
+@media (max-width: 768px) {
+    #trending {
+        padding: 120px 0;
+    }
+
+    #trending .offer-text h2 {
+        font-size: 32px;
+    }
+
+    #trending .offer-text p {
+        padding-top: 12px;
+        padding-bottom: 20px;
+    }
+
+    #trending .btn-shop {
+        font-size: 15px;
+        padding: 11px 25px;
+    }
+}
+
+/* MD (medium) devices */
+@media (max-width: 992px) {
+    #trending {
+        padding: 130px 0;
+    }
+
+    #trending .offer-text h2 {
+        font-size: 36px;
+    }
+
+    #trending .offer-text p {
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+
+    #trending .btn-shop {
+        font-size: 16px;
+        padding: 12px 28px;
+    }
+}
+
+/* LG (large) devices */
+@media (min-width: 1200px) {
+    #trending {
+        padding: 145px 0;
+    }
+
+    #trending .offer-text h2 {
+        font-size: 40px;
+    }
+
+    #trending .offer-text p {
+        padding-top: 15px;
+        padding-bottom: 30px;
+    }
+
+    #trending .btn-shop {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* General blog section styles */
+#blog {
+    margin-bottom: 90px;
+    padding: 50px 0;
+}
+
+#blog .heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#blog .heading h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#blog .heading p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Blog item styles */
+#blog .blog-item {
+    position: relative;
+    margin-bottom: 30px; /* Space between items */
+}
+
+#blog .blog-img {
+    position: relative;
+    overflow: hidden; /* Hide any overflow when scaling */
+}
+
+#blog .blog-img img {
+    width: 120%;
+    height: 307px; /* Set the height of images */
+    object-fit: cover; /* Ensures the aspect ratio remains */
+    transition: transform 0.8s ease-in-out; /* Smooth and slow transition for hover effect */
+}
+
+/* Hover effect for the image */
+#blog .blog-img:hover img {
+    transform: scale(1.05) rotate(2deg); /* Slightly scale and rotate the image to the right */
+}
+
+/* Date styling */
+#blog .blog-item .date {
+    font-size: 14px;
+    color: #FFA500; /* Orange color for the date */
+    margin-top: 10px;
+}
+
+/* Description Styling */
+#blog .blog-item .description {
+    font-size: 14px;
+    color: #808080; /* Gray color */
+    margin-top: 10px;
+}
+
+/* Button styles */
+#blog .blog-item .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    border: 2px solid #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 0; /* Removed border-radius */
+}
+
+/* Button hover effect */
+#blog .blog-item .btn:hover {
+    color: #FFA500;
+    border-color: #FFA500;
+}
+
+#blog .blog-item .btn i {
+    margin-left: 10px;
+}
+
+#blog .blog-item .btn i:hover {
+    color: #FFA500; /* Change arrow color to orange */
+}
+
+/* Blog date link styling */
+#blog .blog-item .date a {
+    color: #FFA500; /* Linkin rəngi narıncı */
+    text-decoration: underline; /* Altdan xətti hər zaman göstər */
+}
+
+/* RESPONSIVE DESIGN */
+
+/* XS (extra small) devices */
+@media (max-width: 576px) {
+    #blog .col-4 {
+        width: 100%;
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+
+    #blog .heading h2 {
+        font-size: 24px;
+    }
+
+    #blog .heading p {
+        font-size: 14px;
+    }
+
+    #blog .blog-item .description {
+        font-size: 12px;
+    }
+}
+
+/* SM (small) devices */
+@media (min-width: 577px) and (max-width: 768px) {
+    #blog .col-4 {
+        width: 50%;
+        padding: 0 10px;
+    }
+
+    #blog .heading h2 {
+        font-size: 28px;
+    }
+
+    #blog .heading p {
+        font-size: 16px;
+    }
+}
+
+/* MD (medium) devices */
+@media (min-width: 769px) and (max-width: 992px) {
+    #blog .col-4 {
+        width: 33.33%;
+        padding: 0 15px;
+    }
+}
+
+/* LG (large) devices */
+@media (min-width: 993px) and (max-width: 1200px) {
+    #blog .col-4 {
+        width: 33.33%;
+        padding: 0 15px;
+    }
+}
+
+/* XL (extra large) devices */
+@media (min-width: 1201px) {
+    #blog .col-4 {
+        width: 33.33%;
+        padding: 0 15px;
+    }
+}
+
+
+
+#insta {
+    margin-bottom: 90px;
+    
+    padding: 60px 0;
+    background-color: #fff; /* Arxa fon ağ olacaq */
+    background-size: 1490.8px 355.23px; /* Arxa fonun ölçüsü */
+    background-position: center center; /* Arxa fonu ortada yerləşdiririk */
+    height: 355.23px; /* Arxa fonun hündürlüyü */
+    width: 1490.8px; /* Arxa fonun eni */
+    display: flex;
+    justify-content: center; /* Şəkilləri üfüqi mərkəzləşdiririk */
+    align-items: center; /* Şəkilləri şaquli mərkəzləşdiririk */
+    position: relative; /* Şəkilləri fonun üzərinə yerləşdirmək üçün */
+    margin: 0 auto; /* Mərkəzləşdirmək üçün */
+}
+
+#insta .heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#insta .heading h2 {
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#insta .heading p {
+    font-size: 16px;
+    color: #808080; /* Boz rəng */
+}
+
+#insta .insta-slider {
+    display: flex;
+    justify-content: space-between; /* Şəkilləri bir-birindən aralı yerləşdiririk */
+    width: 100%; /* Sliderin enini 100% edirik ki, şəkillər düzgün yerləşsin */
+}
+
+#insta .insta-post {
+    width: 20%; /* Şəkillərin eni 20% edilib ki, ümumi 5 şəkil sığsın */
+    height: 100%; /* Şəkillərin hündürlüyü avtomatik olaraq ayarlanacaq */
+    margin: 0; /* Şəkillər arasında boşluq olmur */
+    position: relative; /* Iconu şəkil üzərində yerləşdirmək üçün */
+}
+
+#insta .insta-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Şəkilin ölçüsünə uyğun şəkildə kəsilməsi */
+    border-radius: 0; /* Kənarları yuvarlaq etmədik */
+    transition: opacity 0.3s ease; /* Şəkil üzərinə gələndə rəngin dəyişməsi üçün keçid */
+}
+
+/* Şəkillər üzərinə gələndə ağ fon göstərmək */
+#insta .insta-post:hover img {
+    opacity: 0.5; /* Şəkilin üzərinə gələndə opacity 0.5 olur ki, ağ fon göstərilsin */
+}
+
+/* Instagram iconu yerləşdirilir */
+#insta .insta-post i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2); /* İkona ortalanmış və böyüdülmüş formada */
+    color: #000; /* Qara rəng */
+    opacity: 0; /* Başlanğıcda icon görünmür */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Şəkil üzərinə gələndə yavaşca görünsün */
+}
+
+/* Şəkil üzərinə gəldikdə Instagram iconu görünür */
+#insta .insta-post:hover i {
+    opacity: 1; /* Şəkil üzərinə gəldikdə icon görünür */
+    transform: translate(-50%, -50%) scale(1); /* Normal ölçüyə qayıdacaq */
+}
+
+/* İconun ölçüsünü tənzimləyirik */
+#insta .insta-post i.fa-brands.fa-instagram {
+    font-size: 2rem; /* Iconun ölçüsünü artırdım */
+}
+
+/* XS - Small ekranlar (mobillər üçün) */
+@media (max-width: 575.98px) {
+    #insta .insta-post {
+        width: 100%; /* Şəkillər tam genişlikdə olacaq */
+    }
+
+    #insta .insta-slider {
+        flex-direction: column; /* Şəkillər üfüqi yerinə şaquli sıralanacaq */
+    }
+
+    #insta .heading h2 {
+        font-size: 20px; /* Başlıq font ölçüsü kiçildiləcək */
+    }
+
+    #insta .heading p {
+        font-size: 14px; /* Alt yazı font ölçüsü kiçildiləcək */
+    }
+
+    #insta .insta-post i {
+        font-size: 2rem; /* İcon ölçüsü kiçildiləcək */
+    }
+}
+
+/* SM - Medium ekranlar (tablet ölçüsü) */
+@media (max-width: 767.98px) {
+    #insta .insta-post {
+        width: 45%; /* Şəkillər daha kiçik olacaq */
+    }
+
+    #insta .insta-slider {
+        flex-direction: row; /* Şəkillər üfüqi yerləşdiriləcək */
+        justify-content: space-between; /* Şəkillər arasında daha çox boşluq */
+    }
+
+    #insta .heading h2 {
+        font-size: 22px; /* Başlıq font ölçüsü kiçildiləcək */
+    }
+
+    #insta .heading p {
+        font-size: 15px; /* Alt yazı font ölçüsü kiçildiləcək */
+    }
+
+    #insta .insta-post i {
+        font-size: 2.5rem; /* İcon ölçüsü kiçildiləcək */
+    }
+}
+
+/* MD - Large ekranlar (laptop ölçüsü) */
+@media (max-width: 1023.98px) {
+    #insta .insta-post {
+        width: 20%; /* 5 şəkil kiçik ekranlarda sıralanır */
+    }
+
+    #insta .insta-slider {
+        flex-direction: row; /* Şəkillər üfüqi yerləşdiriləcək */
+    }
+
+    #insta .heading h2 {
+        font-size: 24px; /* Başlıq font ölçüsü kiçildiləcək */
+    }
+
+    #insta .heading p {
+        font-size: 16px; /* Alt yazı font ölçüsü kiçildiləcək */
+    }
+
+    #insta .insta-post i {
+        font-size: 3rem; /* İcon ölçüsü kiçildiləcək */
+    }
+}
+
+/* LG - Extra large ekranlar (desktops üçün) */
+@media (min-width: 1024px) {
+    #insta .insta-post {
+        width: 20%; /* Şəkillərin eni böyük ekranlarda daha çox olacaq */
+    }
+
+    #insta .insta-slider {
+        flex-direction: row; /* Şəkillər üfüqi yerləşdiriləcək */
+    }
+
+    #insta .heading h2 {
+        font-size: 28px; /* Başlıq font ölçüsü böyüdüləcək */
+    }
+
+    #insta .heading p {
+        font-size: 18px; /* Alt yazı font ölçüsü böyüdüləcək */
+    }
+
+    #insta .insta-post i {
+        font-size: 3.5rem; /* İcon ölçüsü artırılacaq */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#footer {
+    background-color: #f8f8f8;
+    padding: 40px 0;
+    margin-top: 70px; /* Yuxarıdakı section ilə footer arasındakı boşluq */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Footer Row */
+#footer .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* Left Side */
+#footer-left-side {
+    flex: 1;
+    min-width: 250px;
+}
+
+#footer-left-side img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+#footer-left-side p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Social Media Icons */
+#footer-left-side-icon ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+#footer-left-side-icon ul li a {
+    color: #333;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+#footer-left-side-icon ul li a:hover {
+    color: #ff6600;
+}
+
+/* Footer Widgets */
+.footer-widget {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-widget h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.footer-widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-widget ul li {
+    margin-bottom: 8px;
+}
+
+.footer-widget ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-widget ul li a:hover {
+    color: #ff6600;
+}
+
+/* Footer içindəki bölmələrin düzgün hizalanması */
+#footer .row section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Newsletter Section */
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.subscribe-form .form-control {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.subscribe-form .theme-btn-one {
+    background-color: #080605;
     color: #fff;
-    padding-bottom: 30px;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.subscribe-form .theme-btn-one:hover {
+    background-color: #272625;
 }
