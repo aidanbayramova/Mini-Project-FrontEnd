@@ -425,23 +425,18 @@ body {
 
 /* About Banner */
 #about-banner {
-    margin-bottom: 30px;
+    margin-top: 100px;;
     position: relative;
     margin: 0 !important;
     padding: 0 !important;
 }
 
-/* Şəkil */
-#about-banner .about-banner-img img {
-    width: 100%;
-    height: 265px; /* Şəkilin hündürlüyünü 265px olaraq təyin edirik */
-    object-fit: cover;
-    display: block;
-    margin: 0;
-    padding: 0;
-    border: 0;
+#about-section .about-img-container img {
+    width: 690px;  /* Sekilin eni */
+    height: 514px; /* Sekilin hündürlüyü */
+    object-fit: cover; /* Şəkilin ölçüləri ilə uyğundur */
+    margin-left: -50px;  /* Sekili sola çəkir */
 }
-
 /* Ortada olan yazı */
 #about-banner .about-banner-text {
     position: absolute;
@@ -565,100 +560,316 @@ body {
 
 
 
-
 #about-section .about-wrapper {
+    margin-top: 100px;
     display: flex;
-    margin-bottom: 30px;
     align-items: center;
-    justify-content: flex-start;
     gap: 20px; /* Şəkil ilə yazı arasındakı məsafə */
+    flex-wrap: wrap; /* Kiçik ekranlarda elementləri alt-üst sıralama */
 }
 
 #about-section .about-img-container {
     flex: 0 0 auto; /* Şəkil sabit ölçüdə olacaq */
+    width: 690px; /* Şəkil genişliyi */
+    height: 515px; /* Şəkil hündürlüyü */
 }
 
 #about-section .about-img-container img {
-    width: 690px;
-    height: 515px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
-
 #about-section .about-content-container {
+    margin-top: -93px;
+    margin-left: -36px;
     flex: 1; /* Yazı konteyneri qalan yeri dolduracaq */
+    max-width: 650px; /* Yazı konteynerinin maksimal genişliyi */
 }
 
-#about-section .about-content-container h2 {
+#about-section .about-content-container h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    text-transform: uppercase;
 }
 
-#about-section .about-content-container h4 {
-    font-size: 1.5rem;
+#about-section .about-content-container h6 {
+    font-size: 1.3rem;
     margin-top: 10px;
+    font-weight: 470;
 }
 
 #about-section .about-content-container span {
-    display: block; /* Span'ları blok şəklində göstəririk ki, hər birini alt-üst sıralasın */
+    color: grey;
+    display: block; /* Span'ları blok halına gətiririk ki, hər birini alt-üst sıralasın */
     font-size: 1rem;
     margin-top: 10px;
 }
 
-
-/* Responsive Design */
-@media (max-width: 767px) {
-    #about-section {
-        padding-top: 50px;
-        padding-bottom: 50px;
+/* Responsive - XS Ekranlar (375px və aşağı) */
+@media (max-width: 575px) {
+    #about-section .about-wrapper {
+        flex-direction: column; /* Şəkil və yazı alt-üst sıralansın */
+        text-align: center; /* Mətni mərkəzləşdir */
     }
 
-    .about-wrapper {
-        flex-direction: column; /* Kiçik ekranlarda şaquli düzülüş */
-        align-items: flex-start;
+    #about-section .about-img-container {
+        width: 100%; /* Şəkil genişliyini 100% edirik */
+        height: auto; /* Şəkilin hündürlüyünü avtomatik tənzimləyirik */
     }
 
-    .about-img-container {
-        width: 100%;
-        height: auto;
-        margin-bottom: 20px; /* Yazı ilə şəkil arasındakı məsafə */
+    #about-section .about-content-container {
+        max-width: 100%; /* Yazı konteynerini tam ekran ölçüsündə edirik */
+        margin-top: 10px; /* Mətin və şəkil arasında məsafə */
     }
 
-    .about-content-container {
-        max-width: 100%;
+    #about-section .about-content-container h1 {
+        font-size: 1.8rem; /* Kiçik ekranlar üçün yazı ölçüsü */
     }
 
-    .about-content-container h2 {
-        font-size: 22px;
+    #about-section .about-content-container h6 {
+        font-size: 1.1rem; /* Kiçik ekranlar üçün yazı ölçüsü */
     }
 
-    .about-content-container h4 {
-        font-size: 16px;
-    }
-
-    .about-content-container p {
-        font-size: 14px;
+    #about-section .about-content-container span {
+        font-size: 0.8rem; /* Kiçik ekranlar üçün yazı ölçüsü */
     }
 }
 
+/* Responsive - SM Ekranlar (576px - 767px arası) */
+@media (min-width: 576px) and (max-width: 767px) {
+    #about-section .about-wrapper {
+        flex-direction: column; /* Şəkil və yazı alt-üst sıralansın */
+        text-align: center; /* Mətni mərkəzləşdir */
+    }
+
+    #about-section .about-img-container {
+        width: 100%; /* Şəkil genişliyini 100% edirik */
+        height: auto; /* Şəkilin hündürlüyünü avtomatik tənzimləyirik */
+    }
+
+    #about-section .about-content-container {
+        max-width: 100%; /* Yazı konteynerini tam ekran ölçüsündə edirik */
+        margin-top: 20px; /* Mətin və şəkil arasında məsafə */
+    }
+
+    #about-section .about-content-container h1 {
+        font-size: 2rem; /* Kiçik ekranlar üçün yazı ölçüsü */
+    }
+
+    #about-section .about-content-container h6 {
+        font-size: 1.2rem; /* Kiçik ekranlar üçün yazı ölçüsü */
+    }
+
+    #about-section .about-content-container span {
+        font-size: 0.9rem; /* Kiçik ekranlar üçün yazı ölçüsü */
+    }
+}
+
+/* Responsive - MD Ekranlar (768px - 991px arası) */
 @media (min-width: 768px) and (max-width: 991px) {
-    #about-section {
-        padding-top: 80px;
-        padding-bottom: 80px;
+    #about-section .about-wrapper {
+        flex-direction: row; /* Şəkil və yazı yan-yana düzülür */
+        text-align: left; /* Mətni sola yığır */
     }
 
-    .about-content-container {
-        padding: 25px;
+    #about-section .about-img-container {
+        width: 50%; /* Şəkil genişliyini 50% edirik */
+        height: auto; /* Şəkilin hündürlüyünü avtomatik tənzimləyirik */
     }
 
-    .about-content-container h2 {
-        font-size: 24px;
+    #about-section .about-content-container {
+        max-width: 50%; /* Yazı konteynerinin maksimal genişliyini 50% edirik */
     }
 
-    .about-content-container h4 {
-        font-size: 17px;
+    #about-section .about-content-container h1 {
+        font-size: 2.2rem; /* Orta ekranlar üçün yazı ölçüsü */
     }
 
-    .about-content-container p {
-        font-size: 15px;
+    #about-section .about-content-container h6 {
+        font-size: 1.3rem; /* Orta ekranlar üçün yazı ölçüsü */
+    }
+
+    #about-section .about-content-container span {
+        font-size: 0.1rem; /* Orta ekranlar üçün yazı ölçüsü */
     }
 }
+
+/* Responsive - LG Ekranlar (992px və yuxarı) */
+@media (min-width: 992px) {
+    #about-section .about-wrapper {
+        flex-direction: row; /* Şəkil və yazı yan-yana düzülür */
+        text-align: left; /* Mətni sola yığır */
+    }
+
+    #about-section .about-img-container {
+        width: 50%; /* Şəkil genişliyini 50% edirik */
+        height: auto; /* Şəkilin hündürlüyünü avtomatik tənzimləyirik */
+    }
+
+    #about-section .about-content-container {
+        max-width: 50%; /* Yazı konteynerinin maksimal genişliyini 50% edirik */
+    }
+
+    #about-section .about-content-container h1 {
+        font-size: 2.4rem; /* Böyük ekranlar üçün yazı ölçüsü */
+    }
+
+    #about-section .about-content-container h6 {
+        font-size: 1.4rem; /* Böyük ekranlar üçün yazı ölçüsü */
+    }
+
+    #about-section .about-content-container span {
+        font-size: 1.1rem; /* Böyük ekranlar üçün yazı ölçüsü */
+    }
+}
+
+
+
+
+
+
+
+#progress-section {
+    margin-top: 80px;
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Column direction for alignment */
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* Center both columns */
+    align-items: flex-start;
+    width: 100%;
+}
+
+.col-left {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+    max-width: 500px; /* Limit width of text content */
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left; /* Align h2 to the left */
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+    text-align: left; /* Align paragraph to the left */
+}
+
+.col-right {
+    flex: 1;
+    padding-left: 20px;
+    max-width: 500px; /* Limit width of progress bars */
+    text-align: left; /* Align progress bar section to the left */
+}
+
+.progress-container {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.progress-label {
+    font-size: 18px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.progress-bar {
+    width: 0%; /* Start with 0% width */
+    height: 20px;
+    background-color: #ddd; /* Light gray background */
+    border-radius: 5px; /* Slightly rounded corners */
+    position: relative;
+    transition: width 10s ease; /* Animation duration */
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #c79a6a; /* Coffee color */
+    width: 7%; /* Fixed coffee color part (7%) */
+    border-radius: 5px 0 0 5px; /* Rounded corners for the left part */
+}
+
+.progress-bar span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.percentage {
+    font-size: 16px;
+    color: #333;
+    text-align: right;
+    position: absolute;
+    right: 10px;
+    bottom: -25px;
+}
+
+.filled {
+    background-color: #ffcc00; /* Yellow color when filled */
+}
+
+
+
+#service-promo-area .container {
+    display: flex; /* Use Flexbox to align the items horizontally */
+    justify-content: space-between; /* Ensure space between the items */
+    padding: 0 50px; /* Add padding on the left and right of the container */
+  }
+  
+  .row {
+    display: flex; /* Make the .row a flex container */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    width: 100%; /* Ensure it takes full width of the parent container */
+    align-items: stretch; /* Ensures all items stretch to the same height */
+  }
+  
+  .service-promo-item {
+    text-align: center;
+    box-shadow: 0px 0px 6px 1px #0000001c;
+    padding: 25px 10px;
+    width: 326px; /* Fixed width of 360px */
+    height: 247.8px; /* Fixed height of 247.8px */
+    margin-right: 20px; /* Space between items */
+    margin-bottom: 20px; /* Adds some space below the items */
+  }
+  
+  .service-promo-item:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+  
+  .service-promo-content {
+    padding-top: 10px;
+  }
+  
+  .service-promo-content p {
+    padding-top: 10px;
+  }
+  

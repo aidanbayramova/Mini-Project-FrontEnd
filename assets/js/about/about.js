@@ -28,3 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
         newSidebar.classList.remove("show");
     });
 });
+
+
+
+setTimeout(() => {
+    document.querySelectorAll('.progress-bar').forEach(bar => {
+        bar.style.width = bar.getAttribute('data-width'); // Set width dynamically based on the data-width attribute
+        bar.classList.add('filled'); // Add class for yellow color after filling
+    });
+}, 1000); // Start the animation after 1 second (for testing)
