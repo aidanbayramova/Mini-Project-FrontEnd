@@ -430,14 +430,13 @@ body {
     margin: 0 !important;
     padding: 0 !important;
 }
-
 #about-section .about-img-container img {
-    width: 690px;  /* Sekilin eni */
-    height: 514px; /* Sekilin hündürlüyü */
-    object-fit: cover; /* Şəkilin ölçüləri ilə uyğundur */
-    margin-left: -50px;  /* Sekili sola çəkir */
+    width: 800px;  
+    height: 580px;  
+    object-fit: cover; 
+    margin-left: -80px;  
 }
-/* Ortada olan yazı */
+
 #about-banner .about-banner-text {
     position: absolute;
     top: 50%;
@@ -448,7 +447,7 @@ body {
 }
 
 #about-banner .about-banner-text h3 {
-    font-size: 34px;
+    font-size: 44px;
     font-weight: 550; /* Qalınlığı 600 olaraq azaldıq, daha incə olsun */
     margin: 0;
 }
@@ -542,7 +541,7 @@ body {
     }
 
     #about-banner .about-banner-text h3 {
-        font-size: 37px; /* Böyük ekranlar üçün uyğun ölçü */
+        font-size:37px; /* Böyük ekranlar üçün uyğun ölçü */
     }
 
     #about-banner .about-banner-text ul li {
@@ -559,19 +558,20 @@ body {
 
 
 
-
 #about-section .about-wrapper {
     margin-top: 100px;
     display: flex;
     align-items: center;
-    gap: 20px; /* Şəkil ilə yazı arasındakı məsafə */
-    flex-wrap: wrap; /* Kiçik ekranlarda elementləri alt-üst sıralama */
+    gap: 10px; /* Şəkil ilə yazı arasındakı məsafə */
+    flex-wrap: wrap;
 }
 
+/* Şəkil üçün */
 #about-section .about-img-container {
-    flex: 0 0 auto; /* Şəkil sabit ölçüdə olacaq */
-    width: 690px; /* Şəkil genişliyi */
-    height: 515px; /* Şəkil hündürlüyü */
+    flex: 0 0 auto;
+    width: 690px;  /* Şəkilin genişliyi */
+    height: 515px;  /* Şəkilin hündürlüyü */
+    margin-left: 122px; /* Şəkili 20px sağa çəkin */
 }
 
 #about-section .about-img-container img {
@@ -579,228 +579,183 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+/* Yazı konteyneri */
 #about-section .about-content-container {
-    margin-top: -93px;
-    margin-left: -36px;
-    flex: 1; /* Yazı konteyneri qalan yeri dolduracaq */
-    max-width: 650px; /* Yazı konteynerinin maksimal genişliyi */
+    margin-top: -196px;  /* Yeni margin-top */
+    margin-left: -32px;  /* Yeni margin-left */
+    flex: 1; 
+    max-width: 850px; /* Yazı konteynerinin yeni eni */
 }
 
+/* H1 - Yazıları yan-yana düzülməsi */
 #about-section .about-content-container h1 {
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Hərf və sözlər arasında boşluq */
 }
 
+/* Digər yazılar */
 #about-section .about-content-container h6 {
-    font-size: 1.3rem;
-    margin-top: 10px;
-    font-weight: 470;
+    font-size: 1.3rem; 
+    margin-top: 8px;
+    font-weight: 450;
 }
 
 #about-section .about-content-container span {
     color: grey;
-    display: block; /* Span'ları blok halına gətiririk ki, hər birini alt-üst sıralasın */
-    font-size: 1rem;
-    margin-top: 10px;
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 8px;
 }
 
-/* Responsive - XS Ekranlar (375px və aşağı) */
-@media (max-width: 575px) {
+
+/* **RESPONSIVE** */
+@media (max-width: 575px) { 
     #about-section .about-wrapper {
-        flex-direction: column; /* Şəkil və yazı alt-üst sıralansın */
-        text-align: center; /* Mətni mərkəzləşdir */
+        flex-direction: column;
+        text-align: center;
     }
-
     #about-section .about-img-container {
-        width: 100%; /* Şəkil genişliyini 100% edirik */
-        height: auto; /* Şəkilin hündürlüyünü avtomatik tənzimləyirik */
+        width: 100%;
+        height: auto;
     }
-
     #about-section .about-content-container {
-        max-width: 100%; /* Yazı konteynerini tam ekran ölçüsündə edirik */
-        margin-top: 10px; /* Mətin və şəkil arasında məsafə */
+        max-width: 100%;
+        margin-left: 0;
     }
-
     #about-section .about-content-container h1 {
-        font-size: 1.8rem; /* Kiçik ekranlar üçün yazı ölçüsü */
+        font-size: 1.5rem; /* Daha kiçik ekran üçün */
     }
-
     #about-section .about-content-container h6 {
-        font-size: 1.1rem; /* Kiçik ekranlar üçün yazı ölçüsü */
+        font-size: 1rem;
     }
-
     #about-section .about-content-container span {
-        font-size: 0.8rem; /* Kiçik ekranlar üçün yazı ölçüsü */
+        font-size: 0.8rem;
     }
 }
 
-/* Responsive - SM Ekranlar (576px - 767px arası) */
+/* SM */
 @media (min-width: 576px) and (max-width: 767px) {
-    #about-section .about-wrapper {
-        flex-direction: column; /* Şəkil və yazı alt-üst sıralansın */
-        text-align: center; /* Mətni mərkəzləşdir */
-    }
-
-    #about-section .about-img-container {
-        width: 100%; /* Şəkil genişliyini 100% edirik */
-        height: auto; /* Şəkilin hündürlüyünü avtomatik tənzimləyirik */
-    }
-
-    #about-section .about-content-container {
-        max-width: 100%; /* Yazı konteynerini tam ekran ölçüsündə edirik */
-        margin-top: 20px; /* Mətin və şəkil arasında məsafə */
-    }
-
     #about-section .about-content-container h1 {
-        font-size: 2rem; /* Kiçik ekranlar üçün yazı ölçüsü */
+        font-size: 1.6rem;
     }
-
     #about-section .about-content-container h6 {
-        font-size: 1.2rem; /* Kiçik ekranlar üçün yazı ölçüsü */
+        font-size: 1.1rem;
     }
-
     #about-section .about-content-container span {
-        font-size: 0.9rem; /* Kiçik ekranlar üçün yazı ölçüsü */
+        font-size: 0.85rem;
     }
 }
 
-/* Responsive - MD Ekranlar (768px - 991px arası) */
+/* MD */
 @media (min-width: 768px) and (max-width: 991px) {
-    #about-section .about-wrapper {
-        flex-direction: row; /* Şəkil və yazı yan-yana düzülür */
-        text-align: left; /* Mətni sola yığır */
-    }
-
-    #about-section .about-img-container {
-        width: 50%; /* Şəkil genişliyini 50% edirik */
-        height: auto; /* Şəkilin hündürlüyünü avtomatik tənzimləyirik */
-    }
-
-    #about-section .about-content-container {
-        max-width: 50%; /* Yazı konteynerinin maksimal genişliyini 50% edirik */
-    }
-
     #about-section .about-content-container h1 {
-        font-size: 2.2rem; /* Orta ekranlar üçün yazı ölçüsü */
+        font-size: 1.7rem;
     }
-
     #about-section .about-content-container h6 {
-        font-size: 1.3rem; /* Orta ekranlar üçün yazı ölçüsü */
+        font-size: 1.2rem;
     }
-
     #about-section .about-content-container span {
-        font-size: 0.1rem; /* Orta ekranlar üçün yazı ölçüsü */
+        font-size: 0.9rem;
     }
 }
 
-/* Responsive - LG Ekranlar (992px və yuxarı) */
+/* LG */
 @media (min-width: 992px) {
-    #about-section .about-wrapper {
-        flex-direction: row; /* Şəkil və yazı yan-yana düzülür */
-        text-align: left; /* Mətni sola yığır */
-    }
-
-    #about-section .about-img-container {
-        width: 50%; /* Şəkil genişliyini 50% edirik */
-        height: auto; /* Şəkilin hündürlüyünü avtomatik tənzimləyirik */
-    }
-
-    #about-section .about-content-container {
-        max-width: 50%; /* Yazı konteynerinin maksimal genişliyini 50% edirik */
-    }
-
     #about-section .about-content-container h1 {
-        font-size: 2.4rem; /* Böyük ekranlar üçün yazı ölçüsü */
+        font-size: 2.2rem;
     }
-
     #about-section .about-content-container h6 {
-        font-size: 1.4rem; /* Böyük ekranlar üçün yazı ölçüsü */
+        font-size: 1.3rem;
     }
-
     #about-section .about-content-container span {
-        font-size: 1.1rem; /* Böyük ekranlar üçün yazı ölçüsü */
+        font-size: 1rem;
     }
 }
-
-
 
 
 
 
 
 #progress-section {
+    margin-bottom: 50px;
     margin-top: 80px;
     background-color: #f0f0f0; /* Light gray background */
-    padding: 40px;
+    width: 100%;
+    height: 365px;
+    padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column; /* Column direction for alignment */
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     width: 100%;
 }
 
 .row {
     display: flex;
-    justify-content: center; /* Center both columns */
-    align-items: flex-start;
+    justify-content: space-between; /* Space between text and progress bars */
     width: 100%;
 }
 
 .col-left {
-    flex: 1;
+    width: 690px; /* Set width for the left section with text */
     padding-right: 20px;
     text-align: left;
-    max-width: 500px; /* Limit width of text content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 22px;
     color: #333;
-    margin-bottom: 15px;
-    text-align: left; /* Align h2 to the left */
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 p {
     font-size: 16px;
     color: #666;
-    margin-bottom: 40px;
-    text-align: left; /* Align paragraph to the left */
+    margin-bottom: 10px;
+    line-height: 1.6;
+    word-wrap: break-word;
 }
 
 .col-right {
-    flex: 1;
-    padding-left: 20px;
-    max-width: 500px; /* Limit width of progress bars */
-    text-align: left; /* Align progress bar section to the left */
+    width: 690px; /* Set width for the right section with progress bars */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .progress-container {
-    position: relative;
+    margin-bottom: 10px;
     width: 100%;
-    margin: 20px 0;
 }
 
 .progress-label {
     font-size: 18px;
-    color: #333;
+    color: #fff; /* White color for visibility */
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 5px;
-    text-align: left;
 }
 
 .progress-bar {
-    width: 0%; /* Start with 0% width */
-    height: 20px;
+    width: 690px; /* Full width of the container */
+    height: 14px;
     background-color: #ddd; /* Light gray background */
-    border-radius: 5px; /* Slightly rounded corners */
+    border-radius: 5px;
     position: relative;
-    transition: width 10s ease; /* Animation duration */
+    overflow: hidden; /* Ensure that the filling does not go out of bounds */
+    transition: width 6s ease-in-out; /* Transition duration for smooth filling effect */
 }
 
 .progress-bar::before {
@@ -809,23 +764,61 @@ p {
     left: 0;
     top: 0;
     height: 100%;
-    background-color: #c79a6a; /* Coffee color */
-    width: 7%; /* Fixed coffee color part (7%) */
-    border-radius: 5px 0 0 5px; /* Rounded corners for the left part */
+    background-color: #8a320d; /* Coffee color */
+    width: 90px; /* Stabilized coffee color section */
+    border-radius: 5px 0 0 5px;
 }
 
+.progress-bar .fill {
+    position: absolute;
+    left: 90px; /* Start from the end of the coffee section */
+    top: 0;
+    height: 100%;
+    background-color: #ddd; /* Initial gray color */
+    transition: width 6s ease-in-out; /* Animation duration */
+    border-radius: 5px 0 0 5px;
+}
+
+.progress-bar .fill.ui {
+    background-color: #ffcc00; /* Yellow color for UI */
+}
+
+.progress-bar .fill.ideas {
+    background-color: #ffcc00; /* Yellow color for Ideas */
+}
+
+.progress-bar .fill.design {
+    background-color: #ffcc00; /* Yellow color for Design */
+}
+
+/* Adjusting the text inside the bars */
 .progress-bar span {
     position: absolute;
     top: 0;
+    left: 10px;
     right: 10px;
     color: #fff;
     font-weight: bold;
     font-size: 14px;
+    text-align: center;
+    line-height: 20px; /* Vertically center the text */
+}
+
+.progress-bar.ui span {
+    content: 'UI/UX';
+}
+
+.progress-bar.ideas span {
+    content: 'Ideas';
+}
+
+.progress-bar.design span {
+    content: 'Design';
 }
 
 .percentage {
     font-size: 16px;
-    color: #333;
+    color: #fff;
     text-align: right;
     position: absolute;
     right: 10px;
@@ -838,38 +831,471 @@ p {
 
 
 
+
+
+
+
+
 #service-promo-area .container {
-    display: flex; /* Use Flexbox to align the items horizontally */
-    justify-content: space-between; /* Ensure space between the items */
-    padding: 0 50px; /* Add padding on the left and right of the container */
-  }
-  
-  .row {
-    display: flex; /* Make the .row a flex container */
-    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
-    width: 100%; /* Ensure it takes full width of the parent container */
-    align-items: stretch; /* Ensures all items stretch to the same height */
-  }
-  
-  .service-promo-item {
+    margin-bottom: 60px;
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: stretch;
+}
+
+.service-promo-item { 
     text-align: center;
     box-shadow: 0px 0px 6px 1px #0000001c;
     padding: 25px 10px;
-    width: 326px; /* Fixed width of 360px */
+    width: 326px; /* Fixed width of 326px */
     height: 247.8px; /* Fixed height of 247.8px */
     margin-right: 20px; /* Space between items */
-    margin-bottom: 20px; /* Adds some space below the items */
-  }
-  
-  .service-promo-item:last-child {
+    margin-bottom: 20px;
+}
+
+.service-promo-item:last-child {
     margin-right: 0; /* Remove margin from the last item */
-  }
-  
-  .service-promo-content {
+}
+
+.service-promo-content {
     padding-top: 10px;
-  }
-  
-  .service-promo-content p {
-    padding-top: 10px;
-  }
-  
+}
+
+.service-promo-content p {
+    padding-top: 0px;
+    font-size: 18px;
+}
+
+/* **RESPONSIVE** */
+
+/* XS (Extra Small Devices) */
+@media (max-width: 575px) { 
+    #service-promo-area .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service-promo-item {
+        width: 100%; /* Full width for smaller screens */
+        margin-right: 0; /* Remove margin on the right */
+    }
+}
+
+/* SM (Small Devices) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .service-promo-item {
+        width: 48%; /* 2 items per row */
+        margin-right: 20px;
+    }
+    .service-promo-item:nth-child(2n) {
+        margin-right: 0; /* Remove margin for the second item in each row */
+    }
+}
+
+/* MD (Medium Devices) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .service-promo-item {
+        width: 32%; /* 3 items per row */
+        margin-right: 20px;
+    }
+    .service-promo-item:nth-child(3n) {
+        margin-right: 0; /* Remove margin for the third item in each row */
+    }
+}
+
+/* LG (Large Devices) */
+@media (min-width: 992px) {
+    .service-promo-item {
+        width: 23%; /* 4 items per row */
+        margin-right: 20px;
+    }
+    .service-promo-item:nth-child(4n) {
+        margin-right: 0; /* Remove margin for the fourth item in each row */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #team-section */
+#team-section {
+    margin-top: 69px;
+    margin-bottom: 100px; /* Daha az məsafə */
+    background-color: #f6f6f6;
+    padding: 50px 0;
+}
+
+/* .team-slider-container */
+#team-section .team-slider-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px; /* Aralarındakı məsafəni azaldır */
+}
+
+/* .team-member */
+#team-section .team-member {
+    background: #fff;
+    text-align: center;
+    padding-bottom: 25px;
+    flex: 0 0 330px; /* Kartın eni 330px olacaq */
+    box-sizing: border-box;
+    margin: 0 15px; /* Kartların sağdan və soldan məsafəsini artırır */
+}
+
+/* .team-content */
+#team-section .team-content {
+    position: relative;
+    font-size: 16px;
+    padding-top: 20px;
+}
+
+/* .team-name */
+#team-section .team-name {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* .team-img img */
+#team-section .team-img img {
+    width: 330px;
+    height: 330px;
+    object-fit: cover; /* Şəkilin ölçülərinə uyğun olaraq kəsilməsini təmin edir */
+    margin: 0 auto;
+}
+
+/* .team-social */
+#team-section .team-social {
+    width: 100%;
+    background: #fff;
+    bottom: -22px;
+    transition: all 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+/* .team-social li */
+#team-section .team-social li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* .team-social li:last-child */
+#team-section .team-social li:last-child {
+    margin-right: 0;
+}
+
+/* .team-social a */
+#team-section .team-social a {
+    color: #000;
+    transition: all 0.5s ease;
+}
+
+/* .team-social a:hover */
+#team-section .team-social a:hover {
+    color: #b19361;
+}
+
+/* Hover .team-social */
+#team-section .team-member:hover .team-social {
+    bottom: -24px;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* .pos-absolute */
+#team-section .pos-absolute {
+    position: absolute;
+}
+
+/* .team-heading */
+#team-section .team-heading {
+    text-align: center; /* Hər iki mətni ortaya düzür */
+    margin-bottom: 40px; /* Yuxarıda və altda məsafə */
+}
+
+/* .team-titlee */
+#team-section .team-titlee {
+    font-weight: 700; /* Başlıq qalın olacaq */
+    font-size: 36px; /* Başlıq ölçüsü */
+    color: #000; /* Rəng qara */
+}
+
+/* .team-subtitle */
+#team-section .team-subtitle {
+    font-weight: normal; /* Boz alt başlıq */
+    font-size: 18px; /* Alt başlıq ölçüsü */
+    color: #808080; /* Boz rəng */
+    margin-top: 10px; /* Alt başlıq ilə başlıq arasındakı məsafə */
+}
+
+/* XS - Small ekranlar (mobillər üçün) */
+@media (max-width: 575.98px) {
+    #team-section .team-member {
+        flex: 1 1 100%; /* Hər element tam genişlikdə olacaq */
+    }
+
+    #team-section .team-heading h2 {
+        font-size: 22px; /* Başlıq font ölçüsü kiçildiləcək */
+    }
+
+    #team-section .team-heading p {
+        font-size: 14px; /* Alt yazı font ölçüsü kiçildiləcək */
+    }
+}
+
+/* SM - Medium ekranlar (tablet ölçüsü) */
+@media (max-width: 767.98px) {
+    #team-section .team-member {
+        flex: 1 1 48%; /* 2 element yan-yana gələcək */
+    }
+
+    #team-section .team-heading h2 {
+        font-size: 26px; /* Başlıq font ölçüsü kiçildiləcək */
+    }
+
+    #team-section .team-heading p {
+        font-size: 15px; /* Alt yazı font ölçüsü kiçildiləcək */
+    }
+}
+
+/* MD - Large ekranlar (laptop ölçüsü) */
+@media (max-width: 1023.98px) {
+    #team-section .team-member {
+        flex: 1 1 48%; /* 2 element yan-yana gələcək */
+    }
+
+    #team-section .team-heading h2 {
+        font-size: 30px; /* Başlıq font ölçüsü kiçildiləcək */
+    }
+
+    #team-section .team-heading p {
+        font-size: 16px; /* Alt yazı font ölçüsü kiçildiləcək */
+    }
+}
+
+/* LG - Extra large ekranlar (desktops üçün) */
+@media (min-width: 1024px) {
+    #team-section .team-member {
+        flex: 0 0 330px; /* Kartın eni 330px olacaq */
+    }
+
+    #team-section .team-heading h2 {
+        font-size: 36px; /* Başlıq font ölçüsü böyüdüləcək */
+    }
+
+    #team-section .team-heading p {
+        font-size: 18px; /* Alt yazı font ölçüsü böyüdüləcək */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#insta {
+    margin-top: 80px;
+    padding: 60px 0;
+    background-color: #fff;
+    background-size: cover; /* Background daha yaxşı uyğunlaşacaq */
+    background-position: center center;
+    height: 355.23px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+#insta .heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#insta .heading h2 {
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 37px; /* Başlıq ölçüsü */
+}
+
+#insta .heading p {
+    font-size: 18px;
+    color: #808080;
+}
+
+#insta .insta-slider {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap; /* Şəkilləri sığdırmaq üçün */
+}
+
+#insta .insta-post {
+    width: 20%; /* 5 şəkil genişliyində yerləşir */
+    height: 100%;
+    margin: 0; /* Şəkillər arasında boşluq yoxdur */
+    position: relative;
+    box-sizing: border-box;
+}
+
+#insta .insta-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0; /* Kənarları yuvarlaq etmədik */
+    transition: opacity 0.3s ease;
+}
+
+#insta .insta-post:hover img {
+    opacity: 0.5; /* Şəkil üzərinə gəldikdə opacity 0.5 olacaq */
+}
+
+#insta .insta-post i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    color: #000;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#insta .insta-post:hover i {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#insta .insta-post i.fa-brands.fa-instagram {
+    font-size: 3rem;
+}
+
+/* XS - Small ekranlar (mobil ölçüsü) */
+@media (max-width: 575.98px) {
+    #insta .insta-post {
+        width: 100%; /* Şəkillər tam genişlikdə olacaq */
+    }
+
+    #insta .insta-slider {
+        flex-direction: column; /* Şəkillər şaquli sıralanacaq */
+    }
+
+    #insta .heading h2 {
+        font-size: 20px;
+    }
+
+    #insta .heading p {
+        font-size: 14px;
+    }
+
+    #insta .insta-post i {
+        font-size: 2rem;
+    }
+}
+
+/* SM - Medium ekranlar (tablet ölçüsü) */
+@media (max-width: 767.98px) {
+    #insta .insta-post {
+        width: 45%;
+    }
+
+    #insta .insta-slider {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #insta .heading h2 {
+        font-size: 24px;
+    }
+
+    #insta .heading p {
+        font-size: 15px;
+    }
+
+    #insta .insta-post i {
+        font-size: 2.5rem;
+    }
+}
+
+/* MD - Large ekranlar (laptop ölçüsü) */
+@media (max-width: 1023.98px) {
+    #insta .insta-post {
+        width: 20%;
+    }
+
+    #insta .insta-slider {
+        flex-direction: row;
+    }
+
+    #insta .heading h2 {
+        font-size: 28px;
+    }
+
+    #insta .heading p {
+        font-size: 16px;
+    }
+
+    #insta .insta-post i {
+        font-size: 3rem;
+    }
+}
+
+/* LG - Extra large ekranlar (desktops üçün) */
+@media (min-width: 1024px) {
+    #insta .insta-post {
+        width: 20%;
+    }
+
+    #insta .insta-slider {
+        flex-direction: row;
+    }
+
+    #insta .heading h2 {
+        font-size: 37px;
+    }
+
+    #insta .heading p {
+        font-size: 18px;
+    }
+
+    #insta .insta-post i {
+        font-size: 3.5rem;
+    }
+}
+
+
+
+
+
+
+

@@ -30,10 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 setTimeout(() => {
-    document.querySelectorAll('.progress-bar').forEach(bar => {
-        bar.style.width = bar.getAttribute('data-width'); // Set width dynamically based on the data-width attribute
-        bar.classList.add('filled'); // Add class for yellow color after filling
-    });
-}, 1000); // Start the animation after 1 second (for testing)
+    fill.style.transition = 'width 6s ease'; // Smooth transition for filling
+    fill.style.width = `${(width / 100) * maxWidth}px`; // Fill according to the percentage value (600px is max width)
+    percentage.textContent = `${width}%`; // Update percentage text
+}, 6000); // Wait for 6 seconds before starting to fill the bar
