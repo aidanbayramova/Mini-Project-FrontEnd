@@ -1283,33 +1283,6 @@ body {
     text-transform: uppercase;
     border-color: orange;
 }
-/* Heart icon */
-.heart-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #fff;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #f4f3f2;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    z-index: 2;
-}
-
-.heart-icon i {
-    font-size: 13px;
-    color: #060300; /* Default color for the heart icon */
-}
-
-.heart-icon:hover {
-    background-color: #ff7f00;
-    color: #fff; /* Change icon color to white when hovering */
-}
 
 /* Heart icon */
 .heart-icon {

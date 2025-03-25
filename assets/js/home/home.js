@@ -52,24 +52,24 @@ document.querySelectorAll(".product_variation_one_boxed").forEach((box) => {
 
 
 
-// function filterProducts(category) {
-//     // Bütün button-ları götür
-//     const buttons = document.querySelectorAll('.category-button');
+function filterProducts(category) {
+    // Bütün button-ları götür
+    const buttons = document.querySelectorAll('.category-button');
 
-//     // Bütün button-lardan `active` sinfini sil
-//     buttons.forEach(button => button.classList.remove('active'));
+    // Bütün button-lardan `active` sinfini sil
+    buttons.forEach(button => button.classList.remove('active'));
 
-//     // Seçilən button-a `active` sinfini əlavə et
-//     buttons[category - 1].classList.add('active');
+    // Seçilən button-a `active` sinfini əlavə et
+    buttons[category - 1].classList.add('active');
 
-//     // Bütün kartları gizlət
-//     const allCards = document.querySelectorAll('.product-card');
-//     allCards.forEach(card => card.classList.remove('active'));
+    // Bütün kartları gizlət
+    const allCards = document.querySelectorAll('.product-card');
+    allCards.forEach(card => card.classList.remove('active'));
 
-//     // Seçilən kategoriya üçün kartları göstərin
-//     const selectedCards = document.querySelectorAll(`.category-${category}`);
-//     selectedCards.forEach(card => card.classList.add('active'));
-// }
+    // Seçilən kategoriya üçün kartları göstərin
+    const selectedCards = document.querySelectorAll(`.category-${category}`);
+    selectedCards.forEach(card => card.classList.add('active'));
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const dots = document.querySelectorAll(".dot");
