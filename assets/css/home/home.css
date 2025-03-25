@@ -539,6 +539,233 @@ body {
 
 
 
+
+
+/* 
+    #hot-products {
+        margin-bottom: 50px;
+        padding: 50px 0;
+        text-align: center;
+    }
+    
+    #hot-products .section-title {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    
+    #hot-products .section-description {
+        color: grey;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    
+    .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    
+    .tab-btn {
+        background: none;
+        border: 2px solid #ccc;
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        font-size: 16px;
+        text-transform: capitalize;
+        transition: all 0.3s ease;
+    }
+    
+    .tab-btn.active {
+        background-color: #ff7f00;
+        color: #fff;
+        border-color: #ff7f00;
+    }
+    
+    .tab-btn:hover {
+        background-color: #f1f1f1;
+    }
+    
+    .slider-wrapper {
+        display: none;
+        transition: all 0.3s ease;
+    }
+    
+    .slider-wrapper.active {
+        display: block;
+    }
+    
+    .slider {
+        display: flex;
+        overflow: hidden;
+    }
+    
+    .slider-item {
+        flex: 0 0 25%;
+        padding: 10px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    .product-card {
+        width: 100%;
+        max-width: 330px;
+        height: 476.43px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .product-image {
+        width: 100%;
+        height: 380px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 1s ease;
+    }
+    
+    .product-image .default-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.5s ease;
+    }
+    
+    .product-image .hover-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .product-card:hover .hover-image {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    
+    .product-card:hover .default-image {
+        opacity: 0;
+    }
+    
+    .new-label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #236a3b;
+        color: #fff;
+        padding: 3px 7px;
+        font-size: 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-color: #007a58;
+    }
+    
+    .heart-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #f4f3f2;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        z-index: 2;
+    }
+    
+    .heart-icon i {
+        font-size: 13px;
+        color: #060300;
+    }
+    
+    .heart-icon:hover {
+        background-color: #ff7f00;
+    }
+    
+    .heart-icon:hover i {
+        color: #fff;
+    }
+    
+    .product-details {
+        padding: 5px 10px;
+        text-align: center;
+        height: 88px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .product-name {
+        font-size: 16px;
+        color: #333;
+        margin: 0;
+        text-transform: capitalize;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        cursor: pointer;
+    }
+    
+    .product-price {
+        font-size: 14px;
+        color: #000;
+        margin-top: 5px;
+    }
+    
+    .product-name:hover {
+        color: #ff7f00;
+    }
+    
+    @media (max-width: 768px) {
+        .slider-item {
+            flex: 0 0 50%;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .slider-item {
+            flex: 0 0 100%;
+        }
+    }
+     */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /* Product Variation Section */
     #product-variation {
         padding-top: 162px;
@@ -937,6 +1164,7 @@ body {
 
 
 
+
 /* ToDay's Deal Section */
 #todays-deal-section {
     margin-bottom: 50px;
@@ -969,15 +1197,15 @@ body {
 }
 
 .slider-item {
-    flex: 0 0 25%;
-    /* 4 kart görünür */
+    flex: 0 0 25%; /* Ensure 4 items show on desktop */
     padding: 10px;
     text-align: center;
 }
 
 /* Kartın əsas dizaynı */
 .product-card {
-    width: 330px;
+    width: 100%;
+    max-width: 330px;
     height: 476.43px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -993,28 +1221,38 @@ body {
     height: 380px;
     position: relative;
     overflow: hidden;
+    transition: transform 1s ease; /* Slower image transition */
 }
 
-.product-image img {
+.product-image .default-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
 }
 
 .product-image .hover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Slower transition and bring forward on hover */
+}
+
+/* Hover Image Transition */
+.product-card:hover .hover-image {
+    opacity: 1;
+    transform: scale(1.05) rotate(2deg);  /* Move the hover image slightly forward */
 }
 
 .product-card:hover .default-image {
     opacity: 0;
-}
-
-.product-card:hover .hover-image {
-    opacity: 1;
 }
 
 /* Yeni etiket */
@@ -1045,32 +1283,65 @@ body {
     text-transform: uppercase;
     border-color: orange;
 }
-
-/* Ürək iconu */
+/* Heart icon */
 .heart-icon {
     position: absolute;
     top: 10px;
     right: 10px;
     background-color: #fff;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: none;
+    border: 2px solid #f4f3f2;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    z-index: 2;
 }
 
 .heart-icon i {
-    font-size: 16px;
-    color: #000;
+    font-size: 13px;
+    color: #060300; /* Default color for the heart icon */
 }
 
 .heart-icon:hover {
     background-color: #ff7f00;
+    color: #fff; /* Change icon color to white when hovering */
 }
+
+/* Heart icon */
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #f4f3f2;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+.heart-icon i {
+    font-size: 13px;
+    color: #060300; /* Default color for the heart icon */
+}
+
+/* Change heart color to white when hovering over the circle */
+
+
+.heart-icon:hover {
+    background-color: #ff7f00;
+  
+}
+
 
 .heart-icon:hover i {
     color: #fff;
@@ -1079,39 +1350,43 @@ body {
 /* Şəkil dəyişəndə görünəcək iconlar */
 .hidden-icons {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 60px; /* Position the icons lower */
+    right: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
+    z-index: 1;
 }
 
 .icon-scanner,
 .icon-arrows {
     background-color: #fff;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
+    border: 2px solid white; /* Keep border white for these icons */
     cursor: pointer;
+    gap: 7px;
     transition: background-color 0.3s ease;
+    margin-bottom: 10px; /* Add space between the icons */
 }
+
 
 .icon-scanner i,
 .icon-arrows i {
     color: #000;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .icon-scanner:hover,
 .icon-arrows:hover {
     background-color: #ff7f00;
+    border: orange;
 }
 
 .icon-scanner:hover i,
@@ -1119,7 +1394,7 @@ body {
     color: #fff;
 }
 
-/* Add to Cart düyməsi */
+/* Add to Cart button */
 .add-to-cart-btn {
     position: absolute;
     bottom: 10px;
@@ -1127,20 +1402,32 @@ body {
     transform: translateX(-50%);
     background-color: #fff;
     color: #000;
-    padding: 10px 30px;
-    border: 2px solid #ff7f00;
+    padding: 10px 40px;
+    border: 2px solid white;
     font-size: 14px;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    gap: 10px;
 }
 
+/* Add to Cart button hover effect */
 .add-to-cart-btn:hover {
     color: #ff7f00;
 }
 
-/* Şəkil hover ediləndə dəyişsin və iconlar görünsün */
+/* Add to Cart Icon */
+.add-to-cart-btn i {
+    font-size: 16px;
+    color: #ff7f00;
+}
+
+/* On hover, show the icons and button */
 .product-card:hover .hidden-icons,
 .product-card:hover .add-to-cart-btn {
     opacity: 1;
@@ -1151,42 +1438,32 @@ body {
     padding: 5px 10px;
     text-align: center;
     height: 88px;
-    /* Set the height of the product details section */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Center the content vertically */
 }
 
 .product-name {
     font-size: 16px;
-    /* Reduce font size */
     color: #333;
     margin: 0;
-    /* Remove margin to save space */
     text-transform: capitalize;
     overflow: hidden;
-    /* Hide overflow text */
     white-space: nowrap;
-    /* Prevent text wrapping */
     text-overflow: ellipsis;
-    /* Show ellipsis if the text overflows */
     cursor: pointer;
 }
 
 .product-price {
     font-size: 14px;
-    /* Reduce font size */
     color: #000;
     margin-top: 5px;
-    /* Add a small margin to separate name and price */
 }
 
-
+/* Product name hover effect */
 .product-name:hover {
     color: #ff7f00;
 }
-
 
 /* Slider Dots */
 .slider-dots {
@@ -1225,7 +1502,6 @@ body {
         flex: 0 0 100%;
     }
 }
-
 /* -------------------------
      To Days Area 
 ---------------------------*/
@@ -1565,6 +1841,7 @@ body {
 
 
 #insta {
+    margin-top: 60px;
     cursor: pointer;
     margin-bottom: 90px;
     padding: 60px 0;

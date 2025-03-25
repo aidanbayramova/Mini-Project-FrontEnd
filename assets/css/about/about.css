@@ -1121,8 +1121,11 @@ p {
 
 
 
+
 #insta {
-    margin-top: 80px;
+    margin-top: 60px;
+    cursor: pointer;
+    margin-bottom: 90px;
     padding: 60px 0;
     background-color: #fff;
     background-size: cover; /* Background daha yaxşı uyğunlaşacaq */
@@ -1299,3 +1302,313 @@ p {
 
 
 
+
+
+
+
+
+
+/* Footer Styles */
+#footer {
+    background-color: #f8f8f8;
+    padding: 40px 0;
+    overflow-x: hidden;
+    width: 100%;
+    margin-top: 80px;
+}
+
+#footer .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+#footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 4 hissə yan yana olacaq */
+#footer .footer-left,
+#footer .footer-widget {
+    width: 23%;
+    margin-bottom: 5px; /* Daha da kiçildik, 5px-ə endirdik */
+    padding-right: 2px; /* Sağ boşluğu daha da azaldırıq */
+}
+
+#footer .footer-left {
+    margin-left: 20px; /* Logo hissəsini sağa çəkir */
+}
+
+#footer .footer-left img {
+    width: 255px;
+    height: 75px;
+}
+
+#footer .footer-widget h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#footer .footer-social-icons ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+#footer .footer-social-icons ul li a {
+    color: #333;
+    font-size: 16px;  
+    transition: 0.3s;
+}
+
+#footer .footer-social-icons ul li a:hover {
+    color: #ff6600;  /* Hover narıncı rəng */
+}
+
+/* Information Section */
+#footer .footer-widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+#footer .footer-widget ul li {
+    margin-bottom: 8px;
+}
+
+#footer .footer-widget ul li a {
+    color: #030000;
+    font-size: 14px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+#footer .footer-widget ul li a:hover {
+    color: #ff6600;  /* Hover narıncı rəng */
+}
+
+/* Newsletter Section */
+#footer .subscribe-form .form-control {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#footer .subscribe-form .theme-btn-one {
+    background-color: #080605;
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 13px;
+    width: 140px;
+}
+
+#footer .subscribe-form .theme-btn-one:hover {
+    background-color: #272625;
+}
+
+/* Responsive Styles */
+
+/* Extra Small devices (Phones, 576px and down) */
+@media (max-width: 576px) {
+    #footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #footer .footer-left, #footer .footer-widget {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+/* Small devices (Portrait tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) {
+    #footer .footer-left,
+    #footer .footer-widget {
+        width: 48%;  /* Each section takes up almost half of the space */
+    }
+
+    #footer .footer-content {
+        justify-content: center;
+    }
+}
+
+/* Medium devices (Tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #footer .footer-left,
+    #footer .footer-widget {
+        width: 48%;  /* For medium screens, show two sections per row */
+    }
+}
+
+/* Large devices (Desktops, 1024px and up) */
+@media (min-width: 1024px) {
+    #footer .footer-left,
+    #footer .footer-widget {
+        width: 23%;  /* For larger screens, show four sections in a row */
+    }
+}
+
+
+
+
+
+
+/* Footer Copyright Styles */
+#footer-copyright {
+    background-color: #080605;
+    color: #fff;
+    padding: 10px 0; /* Üst və alt boşluğu azaldır */
+    display: flex;
+    justify-content: flex-start; /* Yatayda elementləri sola çəkir */
+    align-items: center; /* Vertikalda ortalama */
+    height: 60px; /* Hündürlük 60px */
+    position: relative; /* Sekil üçün konteyneri yığırıq */
+    text-align: left; /* Copy yazısını sola çəkir */
+}
+
+/* "footer-left" bölməsini tam sola çəkmək üçün əlavə dəyişiklik */
+#footer-copyright .footer-left {
+    flex: 1;
+    justify-content: flex-start; /* Logo hissəsini sola çəkir */
+    text-align: left; /* "COPY" yazısını sola çəkir */
+}
+
+/* "footer-right" bölməsini sağa çəkmək üçün əlavə dəyişiklik */
+#footer-copyright .footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* "INFORMATION" və "SHOP" hissələrini sola çəkir */
+    align-items: center; /* Mərkəzləşdirir */
+}
+
+#footer-copyright .footer-left h6 {
+    font-size: 14px;
+    color: #fff;
+    margin-left: 20px; /* "footer-left" hissəsi üçün margin əlavə etdim */
+}
+
+#footer-copyright .footer-left .andshop {
+    color: #ff6600; /* "AndShop" sözünü narıncı rəngdə edir */
+}
+
+/* "footer-right" içindəki linkləri sola çəkmək */
+#footer-copyright .footer-right ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+#footer-copyright .footer-right ul li {
+    margin-bottom: 8px;
+}
+
+#footer-copyright .footer-right ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer-copyright .footer-right ul li a:hover {
+    color: #ff6600; /* Hover narıncı rəng */
+}
+
+#footer-copyright .footer-right img {
+    width: 243px;
+    height: 21px;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%); /* Şəkili mərkəzə düzür */
+}
+
+/* Responsive Styles */
+
+/* Extra Small Devices (phones, 600px and below) */
+@media (max-width: 600px) {
+    #footer-copyright {
+        flex-direction: column; /* Kiçik ekranlarda alt-alta düzüləcək */
+        text-align: center; /* Mərkəzləşdirir */
+    }
+
+    #footer-copyright .footer-left, 
+    #footer-copyright .footer-right {
+        text-align: center; /* Kiçik ekranlarda mərkəzə yerləşir */
+    }
+
+    #footer-copyright .footer-right img {
+        position: relative; /* Şəkili normal vəziyyətə gətiririk */
+        top: 0;
+        right: 0;
+        transform: none; /* Şəkili artıq mərkəzləşdirmirik */
+    }
+}
+
+/* Small Devices (landscape phones, 600px to 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+    #footer-copyright {
+        flex-direction: column; /* Kiçik ekranlarda alt-alta düzüləcək */
+        text-align: center; /* Mərkəzləşdirir */
+    }
+
+    #footer-copyright .footer-left, 
+    #footer-copyright .footer-right {
+        text-align: center; /* Kiçik ekranlarda mərkəzə yerləşir */
+    }
+
+    #footer-copyright .footer-right img {
+        position: relative; /* Şəkili normal vəziyyətə gətiririk */
+        top: 0;
+        right: 0;
+        transform: none; /* Şəkili artıq mərkəzləşdirmirik */
+    }
+}
+
+/* Medium Devices (tablets, 768px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    #footer-copyright {
+        flex-direction: row; /* Tabletlər üçün yan-yana düzülməlidir */
+        text-align: center; /* Mərkəzləşdirir */
+    }
+
+    #footer-copyright .footer-left, 
+    #footer-copyright .footer-right {
+        text-align: left; /* Texti sola çəkir */
+    }
+
+    #footer-copyright .footer-right img {
+        position: relative; /* Şəkili normal vəziyyətə gətiririk */
+        top: 0;
+        right: 0;
+        transform: none; /* Şəkili artıq mərkəzləşdirmirik */
+    }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 993px) {
+    #footer-copyright {
+        flex-direction: row; /* Böyük ekranlar üçün yan-yana düzülməlidir */
+        text-align: center; /* Mərkəzləşdirir */
+    }
+
+    #footer-copyright .footer-left, 
+    #footer-copyright .footer-right {
+        text-align: left; /* Texti sola çəkir */
+    }
+
+    #footer-copyright .footer-right img {
+        position: absolute;
+        top: 50%;
+        right: 40px;
+        transform: translateY(-50%); /* Şəkili mərkəzə düzür */
+    }
+}
